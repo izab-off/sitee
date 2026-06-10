@@ -35,7 +35,6 @@
       
       <nav class="hidden md:flex gap-8 text-lg">
         <a href="#" onclick="showSection('home')" class="hover:text-emerald-400 transition">Início</a>
-        <a href="#" onclick="showSection('agricultura')" class="hover:text-emerald-400 transition">Agricultura</a>
         <a href="#" onclick="showSection('entrevistas')" class="hover:text-emerald-400 transition">Entrevistas</a>
         <a href="#" onclick="showSection('sustentabilidade')" class="hover:text-emerald-400 transition">Sustentabilidade</a>
         <a href="#" onclick="showSection('inovacoes')" class="hover:text-emerald-400 transition">Inovações</a>
@@ -53,7 +52,7 @@
   <!-- HERO -->
   <section id="home-section" class="hero-bg h-screen flex items-center text-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <span class="bg-white/20 backdrop-blur-md px-5 py-1.5 rounded-full text-sm font-medium">Destaque do Agro</span>
+      <span class="bg-white/20 backdrop-blur-md px-5 py-1.5 rounded-full text-sm font-medium">Destaque</span>
       <h2 class="text-5xl md:text-6xl font-bold mt-6 leading-tight">
         Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro
       </h2>
@@ -66,24 +65,41 @@
 
   <main class="max-w-7xl mx-auto px-6 py-16">
 
-    <!-- AGRICULTURA -->
-    <section id="agricultura-section" class="hidden">
-      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Agricultura</h2>
-      <div onclick="openArticle(2)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
-        <img src="https://picsum.photos/id/1015/1200/600" class="w-full h-96 object-cover" alt="Soja">
-        <div class="p-8">
-          <span class="text-emerald-700 font-medium">Agricultura</span>
-          <h3 class="text-2xl font-bold mt-3">Soja brasileira atinge recorde de produtividade em 2026</h3>
+    <!-- INÍCIO (antiga seção Agricultura) -->
+    <section id="inicio-section">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Início - Últimas do Agro</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Notícia 1 -->
+        <div onclick="openArticle(2)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+          <img src="https://picsum.photos/id/1015/1200/600" class="w-full h-64 object-cover" alt="Soja">
+          <div class="p-8">
+            <span class="text-emerald-700 font-medium">Agricultura</span>
+            <h3 class="text-2xl font-bold mt-3">Soja brasileira atinge recorde de produtividade em 2026</h3>
+            <p class="text-zinc-600 mt-4">Produtividade média chega a 62,5 sacas/ha com uso de agricultura de precisão.</p>
+          </div>
         </div>
+
+        <!-- Notícia 2 -->
+        <div onclick="openArticle(5)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+          <img src="https://picsum.photos/id/1016/1200/600" class="w-full h-64 object-cover" alt="Sustentabilidade">
+          <div class="p-8">
+            <span class="text-emerald-700 font-medium">Sustentabilidade</span>
+            <h3 class="text-2xl font-bold mt-3">Recuperação de nascentes dobra em propriedades rurais</h3>
+            <p class="text-zinc-600 mt-4">Programas de pagamento por serviços ambientais mostram ótimos resultados.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ENTREVISTAS -->
-    <section id="entrevistas-section" class="hidden">
+    <section id="entrevistas-section" class="hidden mt-20">
       <h2 class="text-3xl font-bold mb-10 text-zinc-900">Entrevistas Exclusivas</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div onclick="openArticle(3)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
-          <img src="https://picsum.photos/id/1005/600/400" class="w-full h-64 object-cover" alt="Produtora de café">
+          <img src="https://picsum.photos/id/1005/600/400" class="w-full h-64 object-cover" alt="Produtora">
           <div class="p-7">
             <span class="text-emerald-700 font-medium">Entrevista</span>
             <h3 class="text-xl font-bold mt-3">"Tecnologia acessível é o futuro da agricultura familiar"</h3>
@@ -91,7 +107,7 @@
         </div>
 
         <div onclick="openArticle(4)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
-          <img src="https://picsum.photos/id/106/600/400" class="w-full h-64 object-cover" alt="Pecuarista ILPF">
+          <img src="https://picsum.photos/id/106/600/400" class="w-full h-64 object-cover" alt="Pecuarista">
           <div class="p-7">
             <span class="text-emerald-700 font-medium">Entrevista</span>
             <h3 class="text-xl font-bold mt-3">"ILPF transformou minha fazenda de pecuária"</h3>
@@ -101,10 +117,10 @@
     </section>
 
     <!-- SUSTENTABILIDADE -->
-    <section id="sustentabilidade-section" class="hidden">
+    <section id="sustentabilidade-section" class="hidden mt-20">
       <h2 class="text-3xl font-bold mb-10 text-zinc-900">Sustentabilidade no Agro</h2>
       <div onclick="openArticle(5)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
-        <img src="https://picsum.photos/id/1016/1200/600" class="w-full h-96 object-cover" alt="Recuperação de nascentes">
+        <img src="https://picsum.photos/id/1016/1200/600" class="w-full h-96 object-cover">
         <div class="p-8">
           <span class="text-emerald-700 font-medium">Sustentabilidade</span>
           <h3 class="text-2xl font-bold mt-3">Recuperação de nascentes dobra em propriedades rurais</h3>
@@ -113,10 +129,10 @@
     </section>
 
     <!-- INOVAÇÕES -->
-    <section id="inovacoes-section" class="hidden">
-      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Inovações Tecnológicas no Campo</h2>
+    <section id="inovacoes-section" class="hidden mt-20">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Inovações Tecnológicas</h2>
       <div onclick="openArticle(6)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
-        <img src="https://picsum.photos/id/1074/1200/600" class="w-full h-96 object-cover" alt="Drone agrícola">
+        <img src="https://picsum.photos/id/1074/1200/600" class="w-full h-96 object-cover">
         <div class="p-8">
           <span class="text-emerald-700 font-medium">Inovação</span>
           <h3 class="text-2xl font-bold mt-3">Drones com IA reduzem defensivos em até 45%</h3>
@@ -125,7 +141,7 @@
     </section>
   </main>
 
-  <!-- MODAL (mesmo conteúdo rico de antes) -->
+  <!-- MODAL -->
   <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
     <div class="bg-white max-w-3xl w-full mx-auto rounded-3xl max-h-[90vh] overflow-auto shadow-2xl">
       <div class="p-8 md:p-12">
@@ -135,11 +151,11 @@
     </div>
   </div>
 
-  <!-- NEWSLETTER e FOOTER (mesmo de antes) -->
+  <!-- NEWSLETTER -->
   <section id="newsletter" class="bg-zinc-900 text-white py-20 mt-20">
     <div class="max-w-2xl mx-auto text-center px-6">
       <h2 class="text-4xl font-bold">Fique por dentro do Agro</h2>
-      <p class="mt-4 text-zinc-400">Receba as melhores reportagens toda semana</p>
+      <p class="mt-4 text-zinc-400">As melhores reportagens toda semana</p>
       <div class="mt-8 flex max-w-md mx-auto">
         <input type="email" id="email" placeholder="Seu melhor email" class="flex-1 px-6 py-4 rounded-l-2xl bg-zinc-800 border border-zinc-700">
         <button onclick="subscribe()" class="bg-emerald-600 hover:bg-emerald-700 px-10 rounded-r-2xl font-semibold">Assinar</button>
@@ -154,9 +170,9 @@
   </footer>
 
   <script>
-    // Mesma função showSection e openArticle da versão anterior
     function showSection(section) {
       document.querySelectorAll('section[id$="-section"]').forEach(s => s.classList.add('hidden'));
+      
       if (section === 'home') {
         document.getElementById('home-section').scrollIntoView({ behavior: 'smooth' });
       } else {
@@ -167,28 +183,32 @@
     }
 
     function openArticle(id) {
-      const modal = document.getElementById('modal');
       const content = document.getElementById('modal-content');
       let html = '';
 
       if (id === 1) {
         html = `<h1 class="text-4xl font-bold">Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro</h1>
-                <p class="text-zinc-500 mt-3">09 de junho de 2026 • Por Ana Beatriz Oliveira</p>
-                <p class="mt-8">O agronegócio brasileiro vive o maior salto tecnológico de sua história...</p>`;
+                <p class="text-zinc-500 mt-3">09 de junho de 2026</p>
+                <p class="mt-8">O agronegócio brasileiro vive grande transformação com drones, IA e agricultura de precisão.</p>`;
       } else if (id === 2) {
-        html = `<h1 class="text-4xl font-bold">Soja brasileira atinge recorde de produtividade em 2026</h1><p class="mt-8">Produtividade média chega a 62,5 sacas por hectare...</p>`;
+        html = `<h1 class="text-4xl font-bold">Soja brasileira atinge recorde de produtividade em 2026</h1>
+                <p class="mt-8">Produtividade média chega a 62,5 sacas por hectare com novas tecnologias.</p>`;
       } else if (id === 3) {
-        html = `<h1 class="text-4xl font-bold">"Tecnologia acessível é o futuro da agricultura familiar"</h1><p class="mt-8">Entrevista com Dona Rosa Silva...</p>`;
+        html = `<h1 class="text-4xl font-bold">"Tecnologia acessível é o futuro da agricultura familiar"</h1>
+                <p class="mt-8">Entrevista com Dona Rosa Silva, produtora de café em Minas Gerais.</p>`;
       } else if (id === 4) {
-        html = `<h1 class="text-4xl font-bold">"ILPF transformou minha fazenda de pecuária"</h1><p class="mt-8">Entrevista com João Mendes...</p>`;
+        html = `<h1 class="text-4xl font-bold">"ILPF transformou minha fazenda de pecuária"</h1>
+                <p class="mt-8">Entrevista com João Mendes, pecuarista em Mato Grosso.</p>`;
       } else if (id === 5) {
-        html = `<h1 class="text-4xl font-bold">Recuperação de nascentes dobra em propriedades rurais</h1><p class="mt-8">Programas de PSA...</p>`;
+        html = `<h1 class="text-4xl font-bold">Recuperação de nascentes dobra em propriedades rurais</h1>
+                <p class="mt-8">Programas de sustentabilidade trazem resultados positivos para o agro.</p>`;
       } else if (id === 6) {
-        html = `<h1 class="text-4xl font-bold">Drones com IA reduzem defensivos em até 45%</h1><p class="mt-8">Tecnologia brasileira...</p>`;
+        html = `<h1 class="text-4xl font-bold">Drones com IA reduzem defensivos em até 45%</h1>
+                <p class="mt-8">Tecnologia brasileira ganha destaque no campo.</p>`;
       }
 
       content.innerHTML = html;
-      modal.classList.remove('hidden');
+      document.getElementById('modal').classList.remove('hidden');
     }
 
     function closeModal() {
