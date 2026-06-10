@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal Digital do Agrinho</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://picsum.photos/id/1015/2000/1200');
+      background-size: cover;
+      background-position: center;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      transition: all 0.4s;
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-zinc-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <i class="fas fa-seedling text-4xl text-emerald-500"></i>
+        <div>
+          <h1 class="text-3xl font-bold tracking-tighter">AGRINHO</h1>
+          <p class="text-xs -mt-1 text-zinc-400">Jornal Digital do Campo</p>
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex gap-8 text-lg">
+        <a href="#" onclick="showSection('home')" class="hover:text-emerald-400 transition">Início</a>
+        <a href="#" onclick="showSection('agricultura')" class="hover:text-emerald-400 transition">Agricultura</a>
+        <a href="#" onclick="showSection('entrevistas')" class="hover:text-emerald-400 transition">Entrevistas</a>
+        <a href="#" onclick="showSection('sustentabilidade')" class="hover:text-emerald-400 transition">Sustentabilidade</a>
+        <a href="#" onclick="showSection('inovacoes')" class="hover:text-emerald-400 transition">Inovações</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2.5 rounded-xl font-semibold transition">
+          Assine
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home-section" class="hero-bg h-screen flex items-center text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="bg-white/20 backdrop-blur-md px-5 py-1.5 rounded-full text-sm font-medium">Destaque do Agro</span>
+      <h2 class="text-5xl md:text-6xl font-bold mt-6 leading-tight">
+        Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro
+      </h2>
+      <button onclick="openArticle(1)" 
+              class="mt-10 bg-white text-zinc-900 px-8 py-4 rounded-2xl font-bold hover:bg-emerald-100 transition text-lg">
+        Ler reportagem completa →
+      </button>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- AGRICULTURA -->
+    <section id="agricultura-section" class="hidden">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Agricultura</h2>
+      <div onclick="openArticle(2)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://picsum.photos/id/1015/1200/600" class="w-full h-96 object-cover" alt="Soja">
+        <div class="p-8">
+          <span class="text-emerald-700 font-medium">Agricultura</span>
+          <h3 class="text-2xl font-bold mt-3">Soja brasileira atinge recorde de produtividade em 2026</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTREVISTAS -->
+    <section id="entrevistas-section" class="hidden">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Entrevistas Exclusivas</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div onclick="openArticle(3)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+          <img src="https://picsum.photos/id/1005/600/400" class="w-full h-64 object-cover" alt="Produtora de café">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium">Entrevista</span>
+            <h3 class="text-xl font-bold mt-3">"Tecnologia acessível é o futuro da agricultura familiar"</h3>
+          </div>
+        </div>
+
+        <div onclick="openArticle(4)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+          <img src="https://picsum.photos/id/106/600/400" class="w-full h-64 object-cover" alt="Pecuarista ILPF">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium">Entrevista</span>
+            <h3 class="text-xl font-bold mt-3">"ILPF transformou minha fazenda de pecuária"</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSTENTABILIDADE -->
+    <section id="sustentabilidade-section" class="hidden">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Sustentabilidade no Agro</h2>
+      <div onclick="openArticle(5)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://picsum.photos/id/1016/1200/600" class="w-full h-96 object-cover" alt="Recuperação de nascentes">
+        <div class="p-8">
+          <span class="text-emerald-700 font-medium">Sustentabilidade</span>
+          <h3 class="text-2xl font-bold mt-3">Recuperação de nascentes dobra em propriedades rurais</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- INOVAÇÕES -->
+    <section id="inovacoes-section" class="hidden">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Inovações Tecnológicas no Campo</h2>
+      <div onclick="openArticle(6)" class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://picsum.photos/id/1074/1200/600" class="w-full h-96 object-cover" alt="Drone agrícola">
+        <div class="p-8">
+          <span class="text-emerald-700 font-medium">Inovação</span>
+          <h3 class="text-2xl font-bold mt-3">Drones com IA reduzem defensivos em até 45%</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL (mesmo conteúdo rico de antes) -->
+  <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+    <div class="bg-white max-w-3xl w-full mx-auto rounded-3xl max-h-[90vh] overflow-auto shadow-2xl">
+      <div class="p-8 md:p-12">
+        <button onclick="closeModal()" class="float-right text-4xl text-zinc-400 hover:text-zinc-600">&times;</button>
+        <div id="modal-content" class="prose prose-zinc max-w-none text-lg leading-relaxed"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER e FOOTER (mesmo de antes) -->
+  <section id="newsletter" class="bg-zinc-900 text-white py-20 mt-20">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-bold">Fique por dentro do Agro</h2>
+      <p class="mt-4 text-zinc-400">Receba as melhores reportagens toda semana</p>
+      <div class="mt-8 flex max-w-md mx-auto">
+        <input type="email" id="email" placeholder="Seu melhor email" class="flex-1 px-6 py-4 rounded-l-2xl bg-zinc-800 border border-zinc-700">
+        <button onclick="subscribe()" class="bg-emerald-600 hover:bg-emerald-700 px-10 rounded-r-2xl font-semibold">Assinar</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-zinc-950 text-zinc-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p>© 2026 Jornal Digital do Agrinho • Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mesma função showSection e openArticle da versão anterior
+    function showSection(section) {
+      document.querySelectorAll('section[id$="-section"]').forEach(s => s.classList.add('hidden'));
+      if (section === 'home') {
+        document.getElementById('home-section').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const sec = document.getElementById(section + '-section');
+        sec.classList.remove('hidden');
+        sec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function openArticle(id) {
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modal-content');
+      let html = '';
+
+      if (id === 1) {
+        html = `<h1 class="text-4xl font-bold">Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro</h1>
+                <p class="text-zinc-500 mt-3">09 de junho de 2026 • Por Ana Beatriz Oliveira</p>
+                <p class="mt-8">O agronegócio brasileiro vive o maior salto tecnológico de sua história...</p>`;
+      } else if (id === 2) {
+        html = `<h1 class="text-4xl font-bold">Soja brasileira atinge recorde de produtividade em 2026</h1><p class="mt-8">Produtividade média chega a 62,5 sacas por hectare...</p>`;
+      } else if (id === 3) {
+        html = `<h1 class="text-4xl font-bold">"Tecnologia acessível é o futuro da agricultura familiar"</h1><p class="mt-8">Entrevista com Dona Rosa Silva...</p>`;
+      } else if (id === 4) {
+        html = `<h1 class="text-4xl font-bold">"ILPF transformou minha fazenda de pecuária"</h1><p class="mt-8">Entrevista com João Mendes...</p>`;
+      } else if (id === 5) {
+        html = `<h1 class="text-4xl font-bold">Recuperação de nascentes dobra em propriedades rurais</h1><p class="mt-8">Programas de PSA...</p>`;
+      } else if (id === 6) {
+        html = `<h1 class="text-4xl font-bold">Drones com IA reduzem defensivos em até 45%</h1><p class="mt-8">Tecnologia brasileira...</p>`;
+      }
+
+      content.innerHTML = html;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+
+    function subscribe() {
+      if (document.getElementById('email').value) {
+        alert("✅ Inscrição realizada com sucesso!");
+        document.getElementById('email').value = '';
+      }
+    }
+  </script>
+</body>
+</html>
